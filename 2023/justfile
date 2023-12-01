@@ -1,3 +1,6 @@
+test day:
+    cargo test --package {{day}}
+
 run day part:
     cargo run --package {{day}} --bin {{part}}
 
