@@ -1,4 +1,4 @@
-use day_1::part_1::process;
+use day_1::part_2::process;
 
 pub fn main() -> Result<(), Box<dyn std::error::Error>> {
     let file = include_str!("../../input_2.txt");
