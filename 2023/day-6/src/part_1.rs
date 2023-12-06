@@ -1,4 +1,5 @@
-use itertools::zip;
+use std::iter::zip;
+
 pub fn process(_input: &str) -> Result<String, Box<dyn std::error::Error>> {
     let lines: Vec<&str> = _input.lines().collect();
     let times: Vec<i32> = lines
