@@ -1,3 +1,9 @@
+struct Grid {
+    x: i32,
+    y: i32,
+    touches: bool,
+}
+
 pub fn process(_input: &str) -> Result<String, Box<dyn std::error::Error>> {
     println!("{:?}", _input);
 
@@ -5,17 +11,11 @@ pub fn process(_input: &str) -> Result<String, Box<dyn std::error::Error>> {
         .lines()
         .map(|line| line.split("").filter(|c| !c.is_empty()).collect())
         .collect();
+
     println!("{:?}", grid);
 
-    // let engine_parts = Vec::new();
-
-    for y in 0..grid.len() {
-        println!("Y = {y}");
-        for x in 0..grid[y].len() {
-            println!("X = {x} - Grid Num = {:?}", grid[y][x]);
-            if !grid[y][x].contains(".") {}
-        }
-    }
+    let engine_parts: Vec<Grid> = Vec::new();
+    let mut new_grid: Vec<Vec<&str>> = Vec::from(Vec::new());
 
     Ok("".to_string())
 }
