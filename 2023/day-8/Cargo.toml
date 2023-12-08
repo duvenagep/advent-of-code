@@ -1,0 +1,10 @@
+[package]
+name = "day-8"
+version = "0.1.0"
+edition = "2021"
+
+
+[dependencies]
+itertools = { workspace = true }
+nom = { workspace = true }
+num = "0.4.1"
