@@ -4,13 +4,20 @@ struct Grid {
     touches: bool,
 }
 
+pub fn buffer_grid(grid: &mut Vec<Vec<char>>) -> Vec<Vec<char>> {
+    for x in grid.len() {
+        for y in grid[x] {}
+    }
+    grid
+}
+
 pub fn process(_input: &str) -> Result<String, Box<dyn std::error::Error>> {
     println!("{:?}", _input);
 
-    let grid: Vec<Vec<&str>> = _input
+    let mut grid = _input
         .lines()
-        .map(|line| line.split("").filter(|c| !c.is_empty()).collect())
-        .collect();
+        .map(|line| line.chars().collect())
+        .collect::<Vec<Vec<char>>>();
 
     println!("{:?}", grid);
 
