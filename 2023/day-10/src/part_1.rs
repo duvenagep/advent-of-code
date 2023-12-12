@@ -56,10 +56,6 @@ impl Position {
                     false
                 }
             }
-            // match new_pipe {
-            //     Vertical | Horizontal | TopRight | TopLeft | BottomRight | BottomLeft => true,
-            //     _ => false,
-            // },
             Vertical => {
                 if &self.x < &curr_grid_pos.x {
                     match new_pipe {
