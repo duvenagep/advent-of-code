@@ -20,6 +20,9 @@ pub fn process(_input: &str) -> Result<String, Box<dyn std::error::Error>> {
                 (num_str.to_string() + replacement + num_str).as_str(),
             );
         }
+
+        println!("{:?}", num_line);
+
         let nums = num_line
             .chars()
             .filter_map(|x| x.to_digit(10))
