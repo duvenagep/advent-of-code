@@ -3,14 +3,14 @@ pub fn process(_input: &str) -> Result<String, Box<dyn std::error::Error>> {
     let mut list_2 = Vec::new();
 
     for line in _input.lines() {
-        let mut iter = line.split_whitespace();
-        list_1.push(iter.next().unwrap().parse::<i64>().unwrap());
-        list_2.push(iter.next().unwrap().parse::<i64>().unwrap());
+        let (a, b) = line.split_once("   ").unwrap();
+        list_1.push(a.parse::<u32>().unwrap());
+        list_2.push(b.parse::<u32>().unwrap());
     }
 
     let v = list_1.iter().fold(0, |mut acc, elem| {
         let count = list_2.iter().filter(|e| e == &elem).count();
-        acc += elem * count as i64;
+        acc += elem * count as u32;
         acc
     });
 

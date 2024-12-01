@@ -3,18 +3,15 @@ pub fn process(_input: &str) -> Result<String, Box<dyn std::error::Error>> {
     let mut list_2 = Vec::new();
 
     for line in _input.lines() {
-        let mut iter = line.split_whitespace();
-        list_1.push(iter.next().unwrap().parse::<i64>().unwrap());
-        list_2.push(iter.next().unwrap().parse::<i64>().unwrap());
+        let (a, b) = line.split_once("   ").unwrap();
+        list_1.push(a.parse::<u32>().unwrap());
+        list_2.push(b.parse::<u32>().unwrap());
     }
 
     list_1.sort();
     list_2.sort();
 
-    println!("{:?}", list_1[0]);
-    println!("{:?}", list_2[0]);
-
-    let result: i64 = list_1
+    let result: u32 = list_1
         .iter()
         .zip(list_2.iter())
         .map(|d| if d.0 > d.1 { d.0 - d.1 } else { d.1 - d.0 })
