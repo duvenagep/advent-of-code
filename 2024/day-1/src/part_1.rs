@@ -14,7 +14,7 @@ pub fn process(_input: &str) -> Result<String, Box<dyn std::error::Error>> {
     let result: u32 = list_1
         .iter()
         .zip(list_2.iter())
-        .map(|d| if d.0 > d.1 { d.0 - d.1 } else { d.1 - d.0 })
+        .map(|d| d.0.abs_diff(*d.1))
         .sum();
 
     Ok(result.to_string())
