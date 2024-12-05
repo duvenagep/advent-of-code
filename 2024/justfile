@@ -1,5 +1,5 @@
 test day:
-    cargo test --package {{day}}
+    cargo test --package {{day}} -- --nocapture
 
 run day part:
     cargo run --package {{day}} --bin {{part}}
